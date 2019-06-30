@@ -10,16 +10,14 @@ RUN apt-get update && \
       libglib2.0-dev \
       dpkg-dev \
       git \
-      curl \ 
+      curl \
+      libsepol1 \
+      libsepol1-dev \
+      libselinux1 \
+      libselinux1-dev \
+      libfuse2 \
+      libfuse-dev \
       debhelper && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol1_2.3-2_amd64.deb && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux1_2.3-2build1_amd64.deb && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol1-dev_2.3-2_amd64.deb && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux1-dev_2.3-2build1_amd64.deb && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/f/fuse/libfuse2_2.9.4-1ubuntu1_amd64.deb && \
-    curl -LO http://ge.archive.ubuntu.com/ubuntu/pool/main/f/fuse/libfuse-dev_2.9.4-1ubuntu1_amd64.deb && \
-    dpkg -i *.deb && \
-    rm *.deb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
